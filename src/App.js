@@ -14,6 +14,8 @@ export default class App extends Component {
       defaultValue: "",
       ToDoItems: [],
       deleted: [],
+      class: "",
+      message: ""
     };
   }
 
@@ -38,7 +40,7 @@ export default class App extends Component {
   };
 
   toDoInputHandler = (e) => {
-    if (this.state.class === "" && this.state.message === "") {
+    if (this.state.class === "" && this.state.defaultValue.length !== 0) {
       let date = moment().format("MMMM Do YYYY, h:mm:ss a");
       this.setState((prevState) => ({
         ToDoItems: [
